@@ -10,14 +10,15 @@ import {
 } from "@headlessui/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useAuthContext } from "@/context/AuthContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
-const currentUser = { displayName: "felix franko" };
- /*  const { currentUser, logOut } = useAuthContext(); */
+/* const currentUser = { displayName: "felix franko" }; */
+  const { currentUser, logOut } = useAuthContext();
   const [showBackground, setShowBackground] = useState(false);
 
   useEffect(() => {
